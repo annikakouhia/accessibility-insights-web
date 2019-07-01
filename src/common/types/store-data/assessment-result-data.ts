@@ -38,7 +38,7 @@ export interface ManualTestStepResult {
 
 export interface UserCapturedInstance {
     id: string;
-    description: string;
+    description?: string;
     html?: string;
     selector?: string;
 }

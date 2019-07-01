@@ -449,12 +449,17 @@ describe('AssessmentDataConverterTest', () => {
 
     test('generateFailureInstance', () => {
         const description = 'description';
+        const path = null;
+        const snippet = null;
+
         const expectedResult = {
             id: uid,
             description: description,
+            selector: path,
+            html: snippet,
         };
 
-        expect(testSubject.generateFailureInstance(description)).toEqual(expectedResult);
+        expect(testSubject.generateFailureInstance(description, path, snippet)).toEqual(expectedResult);
     });
 
     function setupGenerateInstanceIdentifierMock(instance: UniquelyIdentifiableInstances, identifier: string): void {

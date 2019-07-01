@@ -330,12 +330,14 @@ export class DetailsViewActionMessageCreator extends DevToolActionMessageCreator
         });
     }
 
-    public addFailureInstance(description: string, test: VisualizationType, requirement: string): void {
+    public addFailureInstance(description: string, path: string, snippet: string, test: VisualizationType, requirement: string): void {
         const telemetry = this.telemetryFactory.forRequirementFromDetailsView(test, requirement);
         const payload: AddFailureInstancePayload = {
             test,
             requirement,
             description,
+            path,
+            snippet,
             telemetry,
         };
 
@@ -365,11 +367,20 @@ export class DetailsViewActionMessageCreator extends DevToolActionMessageCreator
         this.dispatcher.sendTelemetry(TelemetryEvents.DETAILS_VIEW_OPEN, telemetryData);
     }
 
-    public editFailureInstance = (description: string, test: VisualizationType, requirement: string, id: string): void => {
+    public editFailureInstance = (
+        description: string,
+        path: string,
+        snippet: string,
+        test: VisualizationType,
+        requirement: string,
+        id: string,
+    ): void => {
         const telemetry = this.telemetryFactory.fromDetailsViewNoTriggeredBy();
         const payload: EditFailureInstancePayload = {
             test,
             requirement,
+            path,
+            snippet,
             id,
             description,
             telemetry,

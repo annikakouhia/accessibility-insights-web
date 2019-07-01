@@ -187,6 +187,8 @@ export class AssessmentStore extends BaseStoreImpl<AssessmentStoreData> {
             const instance = instances[instanceIndex];
             if (instance.id === payload.id) {
                 instance.description = payload.description;
+                instance.selector = payload.path;
+                instance.html = payload.snippet;
                 break;
             }
         }
@@ -210,7 +212,11 @@ export class AssessmentStore extends BaseStoreImpl<AssessmentStoreData> {
     private onAddFailureInstance = (payload: AddFailureInstancePayload): void => {
         const config = this.assessmentsProvider.forType(payload.test).getVisualizationConfiguration();
         const assessmentData = config.getAssessmentData(this.state);
-        const newInstance: UserCapturedInstance = this.assessmentDataConverter.generateFailureInstance(payload.description);
+        const newInstance: UserCapturedInstance = this.assessmentDataConverter.generateFailureInstance(
+            payload.description,
+            payload.path,
+            payload.snippet,
+        );
         assessmentData.manualTestStepResultMap[payload.requirement].instances.push(newInstance);
         this.updateManualTestStepStatus(assessmentData, payload.requirement, payload.test);
 
