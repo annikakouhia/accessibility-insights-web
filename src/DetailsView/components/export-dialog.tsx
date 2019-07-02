@@ -42,6 +42,7 @@ export const ExportDialog = NamedSFC<ExportDialogProps>('ExportDialog', props =>
     };
 
     const blob = props.deps.provideBlob([props.html], 'text/html');
+    
     const blobUrl = props.deps.windowUtils.createObjectURL(blob);
 
     return (
