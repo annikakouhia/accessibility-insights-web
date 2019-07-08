@@ -122,7 +122,7 @@ export class FailureInstancePanelControl extends React.Component<FailureInstance
     };
 
     protected onAddFailureInstance = (): void => {
-        this.props.addFailureInstance(this.state.failureDescription, null, null, this.props.test, this.props.step);
+        this.props.addFailureInstance(this.state.failureDescription, "test selector", "test path", this.props.test, this.props.step);
         this.setState({ isPanelOpen: false });
     };
 

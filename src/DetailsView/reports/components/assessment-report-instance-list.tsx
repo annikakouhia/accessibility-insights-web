@@ -29,6 +29,8 @@ export const AssessmentReportInstanceList = NamedSFC<AssessmentReportInstanceLis
     }
 
     function renderInstanceRows(instance: InstanceReportModel): Row[] {
+        console.log('render instance rows');
+        console.log('');
         const rowSets = instance.props.map(({ key, value }, index) =>
             isScalarColumnValue(value) ? [renderScalarRow(key, value, index)] : renderPropertyBagRows(key, value, index),
         );
@@ -58,6 +60,7 @@ export const AssessmentReportInstanceList = NamedSFC<AssessmentReportInstanceLis
     }
 
     function renderScalarRow(key: string, value: ScalarColumnValue, index: Index, keyClassName: string = 'instance-key'): Row {
+        console.log('render sclar row ' + key);
         return renderRow(
             [
                 <th className={keyClassName} key={key}>

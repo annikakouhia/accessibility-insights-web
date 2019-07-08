@@ -47,6 +47,8 @@ const common: ReportInstanceFieldMap = {
     comment: { key: 'comment', label: 'Comment', getValue: i => i.description },
     snippet: { key: 'snippet', label: 'Snippet', getValue: i => i.html },
     path: { key: 'path', label: 'Path', getValue: i => i.target && i.target.join(', ') },
+    selector: { key: 'selector', label: 'Selector', getValue: i => i.selector },
+    html: { key: 'html', label: 'Html', getValue: i => i.html },
 };
 
 function isValid(value: ColumnValue): ColumnValue {

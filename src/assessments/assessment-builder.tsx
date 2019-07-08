@@ -31,9 +31,9 @@ import { Requirement } from './types/requirement';
 
 export class AssessmentBuilder {
     private static applyDefaultReportFieldMap(requirement: Requirement): void {
-        const { comment, snippet, path } = ReportInstanceField.common;
+        const { comment, snippet, path, selector, html } = ReportInstanceField.common;
 
-        const defaults = requirement.isManual ? [comment] : [path, snippet];
+        const defaults = requirement.isManual ? [comment, selector, html] : [path, snippet];
         const specified = requirement.reportInstanceFields || [];
 
         requirement.reportInstanceFields = [...defaults, ...specified];
