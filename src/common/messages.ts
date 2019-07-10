@@ -189,6 +189,10 @@ export class Messages {
         SetHoveredOverSelector: `${messagePrefix}/inspect/setHoveredOverSelector`,
     };
 
+    public static readonly PathSnippet = {
+        AddPathForValidation: `${messagePrefix}/pathSnippet/addPathForValidation`,
+    };
+
     public static readonly IssueFiling = {
         FileIssue: `${messagePrefix}/issueFiling/file`,
     };
