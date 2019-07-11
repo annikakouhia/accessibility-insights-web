@@ -8,9 +8,9 @@ import { ContentActions } from './content-actions';
 import { DetailsViewActions } from './details-view-actions';
 import { DevToolActions } from './dev-tools-actions';
 import { InspectActions } from './inspect-actions';
+import { PathSnippetActions } from './path-snippet-actions';
 import { PreviewFeaturesActions } from './preview-features-actions';
 import { ScopingActions } from './scoping-actions';
-import { PathSnippetActions } from './path-snippet-actions';
 
 export class ActionHub {
     public visualizationActions: VisualizationActions;

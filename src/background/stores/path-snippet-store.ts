@@ -1,9 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 import { StoreNames } from '../../common/stores/store-names';
-import { BaseStoreImpl } from './base-store-impl';
 import { PathSnippetData } from '../../common/types/store-data/path-snippet-data';
 import { PathSnippetActions } from '../actions/path-snippet-actions';
+import { BaseStoreImpl } from './base-store-impl';
 
 export class PathSnippetStore extends BaseStoreImpl<PathSnippetData> {
     private pathSnippetActions: PathSnippetActions;

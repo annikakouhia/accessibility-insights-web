@@ -25,8 +25,8 @@ import {
     VisualizationTogglePayload,
 } from './action-payloads';
 import { InspectActions } from './inspect-actions';
-import { PreviewFeaturesActions } from './preview-features-actions';
 import { PathSnippetActions } from './path-snippet-actions';
+import { PreviewFeaturesActions } from './preview-features-actions';
 
 const visualizationMessages = Messages.Visualizations;
 

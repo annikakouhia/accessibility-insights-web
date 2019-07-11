@@ -330,7 +330,7 @@ export class DetailsViewActionMessageCreator extends DevToolActionMessageCreator
         });
     }
 
-    public addPathForValidation(path: string, snippet: string, test: VisualizationType, requirement: string): void {
+    public addPathForValidation(path: string): void {
         const payload = path;
 
         this.dispatcher.dispatchMessage({

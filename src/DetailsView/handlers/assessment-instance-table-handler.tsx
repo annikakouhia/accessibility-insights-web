@@ -47,6 +47,10 @@ export class AssessmentInstanceTableHandler {
         this.actionMessageCreator.addFailureInstance(description, path, snippet, test, step);
     };
 
+    public addPathForValidation = (path: string): void => {
+        this.actionMessageCreator.addPathForValidation(path);
+    };
+
     public passUnmarkedInstances(test: VisualizationType, step: string): void {
         this.actionMessageCreator.passUnmarkedInstances(test, step);
     }
@@ -165,6 +169,7 @@ export class AssessmentInstanceTableHandler {
                 snippet={instance.html}
                 onRemove={this.actionMessageCreator.removeFailureInstance}
                 onEdit={this.actionMessageCreator.editFailureInstance}
+                onAddPath={this.actionMessageCreator.addPathForValidation}
                 assessmentsProvider={this.assessmentsProvider}
                 featureFlagStoreData={featureFlagStoreData}
             />
